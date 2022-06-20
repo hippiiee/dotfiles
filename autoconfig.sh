@@ -10,9 +10,9 @@ echo "------------------------------------------------"
 
 apt install -y i3
 
-apt install -y wget zsh network-manager\
-feh maim xclip light pulseaudio \
-ffmpeg imagemagick xdotool curl\
+apt install -y wget zsh network-manager \
+feh maim xclip light pulseaudio compton \
+ffmpeg imagemagick xdotool curl scrot bat xserver-xorg-input-synaptics \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
 gtk2-engines-murrine gtk2-engines-pixbuf ncdu python3 python3-pip \
 nemo rofi libnotify-bin playerctl
@@ -40,5 +40,13 @@ echo ""
 echo "------------------------------------------------"
 
 
-rm -rf /home/$username/.config/i3/config && cp .config/i3/config /home/$username/.config/i3/config
+rm -rf /home/$username/.config/i3 && cp -r .config/i3 /home/$username/.config/i3
 cp -r scripts /home/$username
+chmod +x /home/$username/scripts/*.sh 
+
+echo "------------------------------------------------"
+echo ""
+echo "                 Configuration                  "
+echo ""
+echo "------------------------------------------------"
+chmod +s /usr/bin/light
