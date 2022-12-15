@@ -11,7 +11,7 @@ echo "------------------------------------------------"
 apt install -y i3
 
 apt install -y wget zsh network-manager \
-feh maim xclip light pulseaudio compton \
+feh maim xclip light pulseaudio compton i3blocks \
 ffmpeg imagemagick xdotool curl scrot bat xserver-xorg-input-synaptics \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
 gtk2-engines-murrine gtk2-engines-pixbuf ncdu python3 python3-pip \
@@ -50,3 +50,7 @@ echo "                 Configuration                  "
 echo ""
 echo "------------------------------------------------"
 chmod +s /usr/bin/light
+# move config files
+chmod -R 755 etc/
+chown -R root: etc/
+cp -ar etc/. /etc/
