@@ -28,17 +28,28 @@ curl -L http://install.ohmyz.sh | sh
 curl https://raw.githubusercontent.com/reversTeam/Sublivim/master/installer.sh | sh
 chsh -s $(which zsh)
 
+echo "------------------------------------------------"
+echo ""
+echo "           Installing zsh config files          "
+echo ""
+echo "------------------------------------------------"
+
 # user
 sudo -H -u $username bash -c "curl -L http://install.ohmyz.sh | sh"
 sudo -H -u $username bash -c "curl https://raw.githubusercontent.com/reversTeam/Sublivim/master/installer.sh | sh"
 sudo -H -u $username bash -c "chsh -s $(which zsh)"
+## install plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+cp -r home/* /home/$username/
+## install theme
+git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "/home/$username/.zsh/spaceship"
+source "/home/$username/.zsh/spaceship/spaceship.zsh"
 
 echo "------------------------------------------------"
 echo ""
 echo "   Installing config files in home directory    "
 echo ""
 echo "------------------------------------------------"
-
 
 rm -rf /home/$username/.config/i3 && cp -r .config/i3 /home/$username/.config/i3
 cp -r scripts /home/$username
