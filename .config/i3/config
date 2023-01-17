@@ -211,6 +211,9 @@ exec --no-startup-id synclient TapButton1=1
 exec --no-startup-id ~/scripts/screens.sh none
 exec --no-startup-id ~/scripts/screens.sh
 
+# Rofi menu for applications
+bindsym $mod+d exec "rofi -modi drun,run -show drun -font 'DejaVu Sans 10' -show-icons"
+
 # lockscreen
 bindsym $mod+l exec --no-startup-id ~/scripts/lock.sh
 
