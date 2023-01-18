@@ -40,10 +40,10 @@ sudo -H -u $username bash -c "curl https://raw.githubusercontent.com/reversTeam/
 sudo -H -u $username bash -c "chsh -s $(which zsh)"
 ## install plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-cp -r home/* /home/$username/
+cp -ar home/. /home/$username/
 ## install theme
-git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "/home/$username/.zsh/spaceship"
-source "/home/$username/.zsh/spaceship/spaceship.zsh"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 echo "------------------------------------------------"
 echo ""
