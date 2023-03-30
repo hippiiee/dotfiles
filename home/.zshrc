@@ -15,3 +15,4 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 alias myip="curl http://ipecho.net/plain; echo"
+alias dc="docker compose"
