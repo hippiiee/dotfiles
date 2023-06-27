@@ -34,16 +34,17 @@ echo "           Installing zsh config files          "
 echo ""
 echo "------------------------------------------------"
 
+ZSH_CUSTOM="/home/$username/.oh-my-zsh/custom"
 # user
 sudo -H -u $username bash -c "curl -L http://install.ohmyz.sh | sh"
 sudo -H -u $username bash -c "curl https://raw.githubusercontent.com/reversTeam/Sublivim/master/installer.sh | sh"
 sudo -H -u $username bash -c "chsh -s $(which zsh)"
 ## install plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sudo -H -u $username bash -c "git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions"
 cp -ar home/. /home/$username/
 ## install theme
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+sudo -H -u $username bash -c "git clone https://github.com/spaceship-prompt/spaceship-prompt.git $ZSH_CUSTOM/themes/spaceship-prompt --depth=1"
+sudo -H -u $username bash -c "ln -s $ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme $ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 echo "------------------------------------------------"
 echo ""
