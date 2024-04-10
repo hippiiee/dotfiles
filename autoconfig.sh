@@ -52,7 +52,7 @@ echo "   Installing config files in home directory    "
 echo ""
 echo "------------------------------------------------"
 
-rm -rf /home/$username/.config/i3 && rm -rf /home/$username/.config/rofi && cp -r .config/ /home/$username/.config/
+rm -rf /home/$username/.config/i3 && rm -rf /home/$username/.config/rofi && cp -r .config/ /home/$username/
 cp -r scripts /home/$username
 chmod +x /home/$username/scripts/*.sh 
 
