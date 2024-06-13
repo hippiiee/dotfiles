@@ -46,6 +46,10 @@ cp -ar home/. /home/$username/
 sudo -H -u $username bash -c "git clone https://github.com/spaceship-prompt/spaceship-prompt.git $ZSH_CUSTOM/themes/spaceship-prompt --depth=1"
 sudo -H -u $username bash -c "ln -s $ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme $ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+# install fuzzy finder
+sudo -H -u $username bash -c "git clone --depth 1 https://github.com/junegunn/fzf.git ~/tmp/.fzf"
+sudo -H -u $username bash -c "~/tmp/.fzf/install"
+
 echo "------------------------------------------------"
 echo ""
 echo "   Installing config files in home directory    "
