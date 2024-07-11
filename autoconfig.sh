@@ -15,7 +15,7 @@ feh maim xclip light pulseaudio compton i3blocks \
 ffmpeg imagemagick xdotool curl scrot bat xserver-xorg-input-synaptics \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
 gtk2-engines-murrine gtk2-engines-pixbuf ncdu python3 python3-pip \
-nemo rofi libnotify-bin playerctl
+nemo rofi libnotify-bin playerctl ffuf jq
 
 echo "------------------------------------------------"
 echo ""
