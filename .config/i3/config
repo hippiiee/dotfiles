@@ -220,4 +220,4 @@ bindsym $mod+l exec --no-startup-id ~/scripts/lock.sh
 bindcode 107 exec --no-startup-id maim $(date +"%Y-%m-%d-%H%M%S") && mv ~/$(ls -tr | grep -v / | tail -n 1) ~/$(ls -tr | grep -v / | tail -n 1)_$(identify -format '%wx%h' $(ls -tr | grep -v / | tail -n 1)).png && xclip -selection clipboard -t image/png -i ~/$(ls -tr | grep -v / | tail -n 1)
 
 # make a part screen capture, copy it in the clipboard
-bindsym --release Control+Print exec --no-startup-id maim -s $(date +"%Y-%m-%d-%H%M%S") && mv ~/$(ls -tr | grep -v / | tail -n 1) ~/$(ls -tr | grep -v / | tail -n 1)_$(identify -format '%wx%h' $(ls -tr | grep -v / | tail -n 1)).png && xclip -selection clipboard -t image/png -i ~/$(ls -tr | grep -v / | tail -n 1)
+bindsym --release Control+Print exec --no-startup-id flameshot gui
