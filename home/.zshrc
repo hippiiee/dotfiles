@@ -21,3 +21,5 @@ alias cfu-clean='f(){ cfu $@ | cut -d "|" -f1,3- | awk -F/ "!_[\$1]++" | sort -u
 alias cfu='f(){ jq -r ".results[] | [(.status|tostring), (.length|tostring), (.lines|tostring), (.words|tostring), .url] | join(\"|\")" $@ | sort -uV;  unset -f f; }; f'
 alias fu='ffuf -mc all -t 40 -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"'
 alias copy='xclip -selection clipboard <'
+alias cheat='f(){ curl -s "cheat.sh/$1";  unset -f f; }; f'
+alias upload='f(){ curl -F"file=@$1" https://0x0.st;  unset -f f; }; f'
