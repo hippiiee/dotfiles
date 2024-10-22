@@ -10,7 +10,7 @@ echo "------------------------------------------------"
 
 apt install -y i3
 
-apt install -y wget zsh network-manager flameshot \
+apt install -y wget zsh network-manager flameshot xclip \
 feh maim xclip light pulseaudio compton i3blocks \
 ffmpeg imagemagick xdotool curl scrot bat xserver-xorg-input-synaptics \
 git make xdg-utils pkg-config build-essential vim pavucontrol lxappearance \
