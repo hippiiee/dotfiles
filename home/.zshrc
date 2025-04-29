@@ -10,6 +10,9 @@ ZSH_THEME="spaceship"
 plugins=(
 	git
 	zsh-autosuggestions
+	docker
+	zsh-completions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -22,4 +25,11 @@ alias cfu='f(){ jq -r ".results[] | [(.status|tostring), (.length|tostring), (.l
 alias fu='ffuf -mc all -t 40 -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"'
 alias copy='xclip -selection clipboard <'
 alias cheat='f(){ curl -s "cheat.sh/$1";  unset -f f; }; f'
-alias upload='f(){ curl -F"file=@$1" https://0x0.st;  unset -f f; }; f'
+alias upload='f(){
+  BASE_URL="https://share.hippie.cat"
+  RESPONSE=$(curl -s -F "file=@$1" "$BASE_URL/upload/")
+  DOWNLOAD_PATH=$(echo "$RESPONSE" | jq -r .download_url)
+  echo "$BASE_URL$DOWNLOAD_PATH"
+  unset -f f;
+}; f'
+
